@@ -20,10 +20,6 @@
 
 ---
 
-💫 **感谢 [AnyRouter](https://anyrouter.top/register?aff=86mM) 赞助支持！**
-
-🌟 加入 Claude Code 的世界，开启智能编程的美妙旅程！AnyRouter 为中国开发者提供**免费的 Claude Code 转发节点**，无需翻墙即可畅享 AI 编程体验。[立即免费注册 →](https://anyrouter.top/register?aff=86mM)
-
 </div>
 
 基于 [Claude Code Development Kit](https://github.com/peterkrueck/Claude-Code-Development-Kit) 的完整中文本地化版本，提供零门槛的中文 AI 编程体验。
@@ -58,14 +54,14 @@
 ### 一键安装
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/cfrs2005/claude-init/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/domonic18/ai-claude-init/main/install.sh | bash
 ```
 
 ### 手动安装
 
 ```bash
 # 克隆仓库
-git clone https://github.com/cfrs2005/claude-init.git
+git clone https://github.com/domonic18/ai-claude-init.git
 cd claude-init
 
 # 运行安装脚本
@@ -210,5 +206,5 @@ claude sound-test            # 测试通知音效
 🎉 **开始你的中文 AI 编程之旅吧！**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/cfrs2005/claude-init/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/domonic18/ai-claude-init/main/install.sh | bash
 ```

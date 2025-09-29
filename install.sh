@@ -3,13 +3,13 @@
 # Claude Code 中文开发套件远程安装器
 #
 # 该脚本下载并安装 Claude Code 中文开发套件
-# 使用方法: curl -fsSL https://raw.githubusercontent.com/cfrs2005/claude-init/main/install-cn.sh | bash
+# 使用方法: curl -fsSL https://raw.githubusercontent.com/domonic18/ai-claude-init/main/install.sh | bash
 
 set -euo pipefail
 
 # 配置
-REPO_OWNER="cfrs2005"
-REPO_NAME="claude-init"
+REPO_OWNER="domonic18"
+REPO_NAME="ai-claude-init"
 BRANCH="main"
 
 # 输出颜色
@@ -84,6 +84,7 @@ trap cleanup EXIT INT TERM
 # 下载框架
 print_color "$CYAN" "📥 正在下载 Claude Code 中文开发套件..."
 DOWNLOAD_URL="https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/tarball/${BRANCH}"
+print_color "$YELLOW" "下载地址: $DOWNLOAD_URL"
 
 # 带进度指示的下载
 (
