@@ -318,7 +318,7 @@ main() {
             cp -r "templates/.claude/commands/"* "$TARGET_DIR/.claude/commands/" 2>/dev/null || true
             print_color "$GREEN" "  ✅ .claude/commands/ (Claude Code 命令集)"
         fi
-        
+
         # 复制 hooks
         if [ -d "templates/.claude/hooks" ]; then
             mkdir -p "$TARGET_DIR/.claude/hooks"
@@ -327,14 +327,7 @@ main() {
             print_color "$GREEN" "  ✅ .claude/hooks/ (中文化 Hook 脚本和配置)"
         fi
     fi
-    
-    # 复制示例
-    if [ -d "examples" ]; then
-        mkdir -p "$TARGET_DIR/examples"
-        cp -r "examples/"* "$TARGET_DIR/examples/" 2>/dev/null || true
-        print_color "$GREEN" "  ✅ examples/ (中文使用示例)"
-    fi
-    
+
     echo
     print_color "$CYAN" "🔧 正在生成项目配置..."
     
@@ -353,9 +346,7 @@ main() {
     print_color "$CYAN" "📖 下一步："
     echo "  1. 查看 CLAUDE.md 了解中文化的 AI 指令"
     echo "  2. 阅读 docs/README.md 学习文档系统"
-    echo "  3. 参考 examples/ 目录中的使用示例"
-    
-    echo "  4. 运行 'claude' 开始你的中文开发之旅！"
+    echo "  3. 运行 'claude' 开始你的中文开发之旅！"
     echo
     
     # MCP 服务器安装指导
