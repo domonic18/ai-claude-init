@@ -326,6 +326,13 @@ main() {
             chmod +x "$TARGET_DIR/.claude/hooks/"*.sh 2>/dev/null || true
             print_color "$GREEN" "  ✅ .claude/hooks/ (中文化 Hook 脚本和配置)"
         fi
+
+        # 复制 agents
+        if [ -d "templates/.claude/agents" ]; then
+            mkdir -p "$TARGET_DIR/.claude/agents"
+            cp -r "templates/.claude/agents/"* "$TARGET_DIR/.claude/agents/" 2>/dev/null || true
+            print_color "$GREEN" "  ✅ .claude/agents/ (专业技术专家代理)"
+        fi
     fi
 
     echo
