@@ -289,12 +289,12 @@ main() {
     fi
     
     # 复制 MCP 规则
-    if [ -f "templates/MCP-ASSISTANT-RULES.md" ]; then
-        cp "templates/MCP-ASSISTANT-RULES.md" "$TARGET_DIR/" 2>/dev/null || {
-            print_color "$YELLOW" "⚠️  MCP-ASSISTANT-RULES.md 已存在，跳过复制"
-        }
-        print_color "$GREEN" "  ✅ MCP-ASSISTANT-RULES.md (MCP 助手规则)"
-    fi
+    # if [ -f "templates/MCP-ASSISTANT-RULES.md" ]; then
+    #     cp "templates/MCP-ASSISTANT-RULES.md" "$TARGET_DIR/" 2>/dev/null || {
+    #         print_color "$YELLOW" "⚠️  MCP-ASSISTANT-RULES.md 已存在，跳过复制"
+    #     }
+    #     print_color "$GREEN" "  ✅ MCP-ASSISTANT-RULES.md (MCP 助手规则)"
+    # fi
     
     # 复制文档文件
     if [ -d "templates/docs" ]; then
@@ -308,6 +308,24 @@ main() {
             fi
         done
         print_color "$GREEN" "  ✅ docs/ (中文文档系统)"
+    fi
+
+    # 复制教程文件到 docs/tutorials
+    if [ -d "docs/tutorials" ]; then
+        mkdir -p "$TARGET_DIR/docs/tutorials"
+        cp -r "docs/tutorials/"* "$TARGET_DIR/docs/tutorials/" 2>/dev/null || {
+            print_color "$YELLOW" "  ⚠️  部分教程文件已存在，跳过复制"
+        }
+        print_color "$GREEN" "  ✅ docs/tutorials/ (中文教程文档)"
+    fi
+
+    # 复制示例项目到 docs/examples
+    if [ -d "examples" ]; then
+        mkdir -p "$TARGET_DIR/docs/examples"
+        cp -r "examples/"* "$TARGET_DIR/docs/examples/" 2>/dev/null || {
+            print_color "$YELLOW" "  ⚠️  部分示例文件已存在，跳过复制"
+        }
+        print_color "$GREEN" "  ✅ docs/examples/ (项目示例模板)"
     fi
     
     # 复制 .claude 目录
@@ -333,6 +351,14 @@ main() {
             cp -r "templates/.claude/agents/"* "$TARGET_DIR/.claude/agents/" 2>/dev/null || true
             print_color "$GREEN" "  ✅ .claude/agents/ (专业技术专家代理)"
         fi
+        # 复制 skills
+        if [ -d "templates/.claude/skills" ]; then
+            mkdir -p "$TARGET_DIR/.claude/skills"
+            cp -r "templates/.claude/skills/"* "$TARGET_DIR/.claude/skills/" 2>/dev/null || true
+            print_color "$GREEN" "  ✅ .claude/skills/ (Skills 技能)"
+        fi
+        # 复制examples
+
     fi
 
     echo
@@ -351,22 +377,9 @@ main() {
     
     echo
     print_color "$CYAN" "📖 下一步："
-    echo "  1. 查看 CLAUDE.md 了解中文化的 AI 指令"
-    echo "  2. 阅读 docs/README.md 学习文档系统"
-    echo "  3. 运行 'claude' 开始你的中文开发之旅！"
+    echo "  1. 运行 'claude' 开始你的中文开发之旅！"
     echo
-    
-    # MCP 服务器安装指导
-    echo
-    print_color "$CYAN" "📡 推荐安装 MCP 服务器增强功能（全局安装，所有项目可用）："
-    echo
-    print_color "$YELLOW" "Context7 - 获取最新库文档："
-    echo "  claude mcp add context7 -s user -- npx -y @upstash/context7-mcp --api-key YOUR_CONTEXT7_API_KEY"
-    echo
-    print_color "$YELLOW" "Gemini - 深度代码分析和咨询："
-    echo "  claude mcp add gemini -s user -- npx -y gemini-mcp-tool"
-    echo
-    print_color "$YELLOW" "💡 使用 -s user 全局安装，MCP 服务器在所有项目中都可用，无需重复安装！"
+  
 }
 
 # 运行主函数

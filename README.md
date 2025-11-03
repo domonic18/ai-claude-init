@@ -103,7 +103,7 @@ cd claude-init
 **使用方法：**
 ```bash
 # 复制示例项目
-cp -r examples/python-project my-new-project
+cp -r docs/examples/python-project my-new-project
 cd my-new-project
 
 # 开始使用
