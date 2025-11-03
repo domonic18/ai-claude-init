@@ -377,7 +377,8 @@ main() {
     
     echo
     print_color "$CYAN" "📖 下一步："
-    echo "  1. 运行 'claude' 开始你的中文开发之旅！"
+    echo "  1. 查看 CLAUDE.md 了解中文化的 AI 指令"
+    echo "  2. 运行 'claude' 开始你的中文开发之旅！"
     echo
   
 }
