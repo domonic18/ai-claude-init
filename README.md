@@ -51,17 +51,20 @@
 ## 🚀 快速开始
 
 ### 一键安装
+切换到您的工程项目目录下，执行以下命令。
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/domonic18/ai-claude-init/main/install.sh | bash
 ```
+
+> 说明：该命令会在您的项目目录下创建`.claude`目录，并自动复制相关的command、hook、agent、skill等文件。
 
 ### 手动安装
 
 ```bash
 # 克隆仓库
 git clone https://github.com/domonic18/ai-claude-init.git
-cd claude-init
+cd ai-claude-init
 
 # 运行安装脚本
 ./setup.sh
