@@ -183,25 +183,6 @@ claude "分析过去三天的提交并生成摘要"
 claude "只关注功能开发和bug修复的日报"
 ```
 
-## 🔄 自动化使用
-
-### 使用自动化脚本
-```bash
-# 运行自动化脚本
-bash templates/.claude/skills/git-report/resources/git-report-automation.sh
-```
-
-### 使用自动化安装脚本（推荐）
-```bash
-# 运行自动化安装脚本
-bash templates/.claude/skills/git-report/resources/install-launchd-service.sh
-```
-
-### 手动安装Launchd定时任务（不推荐）
-```bash
-# 注意：手动安装需要先修改plist文件中的路径
-# 建议使用上面的自动化安装脚本
-```
 
 ## 🛠️ 故障排除
 
@@ -254,12 +235,6 @@ export WECHAT_WEBHOOK_URL="$WECHAT_WEBHOOK_DEV"
 - **Webhook URL保护**：不要将Webhook URL提交到版本控制
 - **消息内容安全**：日报内容不包含敏感信息，避免泄露代码细节
 
-## 📁 资源文件
-
-- **SKILL.md**：技能的核心定义和详细指令
-- **resources/git-report-automation.sh**：自动化Git报告生成脚本
-- **resources/install-launchd-service.sh**：自动化Launchd服务安装脚本
-- **resources/com.user.claude-git-report.template.plist**：Launchd定时任务模板
 
 ## 🔄 更新和维护
 
@@ -280,4 +255,4 @@ cp -r templates/.claude/skills/git-report ~/.claude/skills/
 
 **开始使用Git报告生成技能，让你的工作成果一目了然！** 🚀
 
-*最后更新: 2025-11-02*
+*最后更新: 2025-11-03*
