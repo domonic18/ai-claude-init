@@ -95,6 +95,20 @@ cd ai-claude-init
 .\setup.ps1
 ```
 
+> **注意**：如果遇到PowerShell执行策略限制，请先运行：
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+> **权限问题处理**：如果遇到文件访问权限问题，请尝试：
+> ```powershell
+> # 以管理员身份运行 PowerShell
+> Start-Process PowerShell -Verb RunAs
+>
+> # 或者使用 Bypass 策略临时运行
+> powershell -ExecutionPolicy Bypass -File .\setup.ps1
+> ```
+
 ## 💡建议
 
 - 如果您**已有工程**项目，想加速您的开发效率，那么建议您参考[`1-建立工程上下文`](README.md#1-建立工程上下文)。
