@@ -51,16 +51,31 @@
 ## 🚀 快速开始
 
 ### 一键安装
-切换到您的工程项目目录下，执行以下命令。
+
+#### Linux / macOS
+切换到您的工程项目目录下，执行以下命令：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/domonic18/ai-claude-init/main/install.sh | bash
 ```
 
+#### Windows
+切换到您的工程项目目录下，在PowerShell中执行以下命令：
+
+```powershell
+irm https://raw.githubusercontent.com/domonic18/ai-claude-init/main/install.ps1 | iex
+```
+
 > 说明：该命令会在您的项目目录下创建`.claude`目录，并自动复制相关的command、hook、agent、skill等文件。
+
+> **注意**：如果遇到PowerShell执行策略限制，请先运行：
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
 
 ### 手动安装
 
+#### Linux / macOS
 ```bash
 # 克隆仓库
 git clone https://github.com/domonic18/ai-claude-init.git
@@ -68,6 +83,16 @@ cd ai-claude-init
 
 # 运行安装脚本
 ./setup.sh
+```
+
+#### Windows
+```powershell
+# 克隆仓库
+git clone https://github.com/domonic18/ai-claude-init.git
+cd ai-claude-init
+
+# 运行安装脚本
+.\setup.ps1
 ```
 
 ## 💡建议
@@ -128,6 +153,9 @@ claude
 
 # 代码质量检查
 /code-review               # 多专家角度代码审查
+
+# 代码提交管理
+/gitcommit                 # 智能分析代码改动并分批提交
 
 # AI 咨询
 /gemini-consult            # 与 Gemini 深入对话咨询
